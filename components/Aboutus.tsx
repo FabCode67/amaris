@@ -33,9 +33,9 @@ const AboutUsSection = () => {
 
     return (
         <section id="about"  className="bg-white w-full py-16">
-            <div className="container flex mx-auto px-4 md:px-8 max-w-7xl">
+            <div className="container flex mx-auto px-2 md:px-8 max-w-7xl">
             <motion.div
-                className="w-full md:w-1/2  justify-start flex mr-4"
+                className="w-full md:w-1/2 md:flex hidden justify-start mr-4"
                 initial="hidden"
                 animate="visible"
                 variants={imageVariants}

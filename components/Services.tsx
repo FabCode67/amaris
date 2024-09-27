@@ -10,18 +10,18 @@ const MedicalServices = () => {
             <div className="max-w-7xl flex justify-center items-center self-center mx-auto">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
                 <div className='abslo absolute top-0'>
-            <h2 className="text-white text-5xl  font-bold">Our Medical Services</h2>
-                <p className="text-white text-lg">
+            <h2 className="text-white md:text-5xl text-2xl  font-bold">Our Medical Services</h2>
+                <p className="text-white md:text-lg text-sm">
                     We are dedicated to serve you the best medical services.
                 </p>
                 </div>
-                <div className="flex w-full items-end">
-                    <div className="space-y-3 flex  justify-betwemen w-[50%]">    
+                <div className="flex w-full items-end md:mt-0 mt-20">
+                    <div className="space-y-3 flex  justify-betwemen md:w-[50%] w-full">    
                         <div className='flex w-1/2  space-y-5 flex-col'> 
-                            <div className="grid grid-cols-1  gap-4">
+                            <div className="grid grid-cols-1  md:gap-4 gap-1">
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="bg-white p-2 py-10 rounded-xl w-[15rem] shadow-lg flex flex-col items-center space-y-4"
+                                    className="bg-white p-2 py-10 rounded-xl md:w-[15rem] w-[10rem] shadow-lg flex flex-col items-center space-y-4"
                                 >
                                     <div className="text-teal-500">
                                         <CiMedicalCase className="text-7xl" />
@@ -36,7 +36,7 @@ const MedicalServices = () => {
                             <div className="grid grid-cols-1 gap-4">
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="bg-white p-2 rounded-xl py-10 w-[15rem] shadow-lg flex flex-col items-center space-y-4"
+                                    className="bg-white p-2 rounded-xl py-10 md:w-[15rem] w-[10rem] shadow-lg flex flex-col items-center space-y-4"
                                 >
                                     <div className="text-teal-500">
                                         <RiNurseFill className="text-7xl" />
@@ -53,7 +53,7 @@ const MedicalServices = () => {
                         <div className="grid grid-cols-1  h-fit my-auto justify-center self-center gap-4">
                             <motion.div
                                 whileHover={{ scale: 1.05 }}
-                                className="bg-white p-2 rounded-xl py-10 w-[18rem] shadow-lg flex flex-col items-center space-y-4"
+                                className="bg-white p-2 rounded-xl py-10 md:w-[18rem] w-[11rem] shadow-lg flex flex-col items-center space-y-4"
                             >
                                 <div className="text-teal-500">
                                     <TbDental className="text-7xl" />
@@ -69,7 +69,7 @@ const MedicalServices = () => {
                     </div>
 
                     {/* Right Column - Images */}
-                    <div className=" w-[45%] float-end justify-end ml-auto justify-items-end items-end space-y-5 flex flex-col">
+                    <div className=" w-[45%] float-end justify-end ml-auto justify-items-end items-end space-y-5 md:flex hidden flex-col">
                         <div className='flex space-x-4'>
                         <motion.div
                             whileHover={{ scale: 1.05 }}

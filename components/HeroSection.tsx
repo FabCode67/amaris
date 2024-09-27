@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
     const services = ["Dental Care", "General Medicine", "Nursing Care", "Reception", "Laboratory"];
-    
     const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
     const [currentServiceText, setCurrentServiceText] = useState("");
     const [isTyping, setIsTyping] = useState(true);
@@ -70,9 +69,9 @@ const HeroSection = () => {
 
     return (
         <section className="relative bg-medBlue bg-[#00205A] min-h-screen text-white w-full h-fit py-16 my-auto justify-center items-center flex ">
-            <div className="container flex  mx-auto px-4 md:px-8 max-w-7xl">
+            <div className="container flex md:flex-row flex-col  mx-auto px-4 md:px-8 md:max-w-7xl w-full md:space-y-0 space-y-6">
             <motion.div
-                    className="flex flex-col justify-center my-auto space-y-6 w-[50%]"
+                    className="flex flex-col justify-center my-auto space-y-6 md:w-[50%] w-full"
                     initial="hidden"
                     animate="visible"
                     variants={containerVariants}
@@ -106,7 +105,7 @@ const HeroSection = () => {
                     </div>
                     
                     <motion.div
-                        className="absolute backdrop-blur-2xl px-2 py-1 text-sm rounded-lg shadow-md bottom-2 flex flex-col right-4"
+                        className="absolute backdrop-blur-2xl text-xs px-2 py-1  rounded-lg shadow-md bottom-2 flex flex-col right-4"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 1, duration: 0.8 }}
@@ -116,7 +115,7 @@ const HeroSection = () => {
                     </motion.div>
 
                     <motion.div
-                        className="absolute bg-[#66799C] px-4 py-1 text-xs rounded-lg shadow-md bottom-20 flex -left-24"
+                        className="absolute bg-[#66799C] md:px-4 px-2 py-1 text-xs rounded-lg shadow-md md:bottom-20 bottom-12 flex md:-left-24 -left-0"
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 1.2, duration: 0.8 }}
@@ -129,7 +128,7 @@ const HeroSection = () => {
                     </motion.div>
 
                     <motion.div
-                        className="absolute bg-[#66799C] px-4 py-1 text-xs rounded-lg shadow-md bottom-56 flex -left-24"
+                        className="absolute bg-[#66799C] md:px-4 px-2 py-1 text-xs rounded-lg shadow-md md:bottom-56 bottom-64 flex md:-left-24 -left-2"
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 1.4, duration: 0.8 }}

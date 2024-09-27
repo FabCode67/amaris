@@ -6,7 +6,7 @@ const teamData = [
         name: 'Dr. John Doe',
         role: 'Cardiologist',
         bio: 'Expert in heart disease and cardiology treatments with over 15 years of experience.',
-        image: '/images/team1.jpg', // Replace with actual image path
+        image: '/images/team1.jpg', 
         socialLinks: {
             twitter: '#',
             linkedin: '#',
@@ -95,13 +95,13 @@ const teamData = [
 const TeamPage = () => {
     return (
         <section id='team' className="bg-gray-100 py-16">
-            <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+            <div className="container mx-auto px-4 md:px-8 md:max-w-7xl w-full">
                 <h2 className="text-center text-4xl font-bold text-[#334C7B] mb-8">Meet Our Team</h2>
 
-                <div className=" flex w-full space-x-4">
+                <div className=" flex md:flex-row flex-col w-full md:space-x-4 space-x-0 ">
                     <motion.div
                         whileHover={{ scale: 1.01 }}
-                        className=" p-6 shadow rounded-xl flex flex-col items-center  w-[30%] h-[35rem] space-y-4"
+                        className=" p-6 shadow rounded-xl flex flex-col items-center  md:w-[30%] w-full md:h-[32rem] h-[28rem] space-y-4"
                     >
                         <img
                             src="/admin2.jpg"
@@ -124,12 +124,12 @@ const TeamPage = () => {
                             </a>
                         </div>
                     </motion.div>
-                    <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-3 w-[70%]">
+                    <div className="grid md:grid-cols-4 grid-cols-2 gap-3 md:w-[70%] md:mt-0 mt-5 w-full">
                         {teamData.map((member, index) => (
                             <motion.div
                                 whileHover={{ scale: 1.01 }}
                                 key={index}
-                                className="bg-white p-3 text-sm rounded-xl shadow-lg flex h-fit flex-col items-center space-y-2"
+                                className="bg-white md:p-3 p-1 text-sm md:rounded-xl rounded-none shadow-lg flex h-fit flex-col items-center space-y-2"
                             >
                                 {/* Member Image */}
                                 <img
@@ -149,7 +149,7 @@ const TeamPage = () => {
                                 <motion.a
                                     whileHover={{ scale: 1.01 }}
                                     href="#"
-                                    className="bg-[#334C7B] w-full text-white py-2 px-4 rounded-md justify-center mx-auto text-center inline-flex items-center space-x-2"
+                                    className="bg-[#334C7B] w-full text-white py-2 md:px-4 px-1 rounded-md justify-center mx-auto text-center inline-flex items-center space-x-2"
                                 >
                                     <FaCalendarAlt />
                                     <span>Book Appointment</span>
