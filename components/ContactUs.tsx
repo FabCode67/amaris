@@ -1,6 +1,5 @@
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaTwitter, FaLinkedin, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaTwitter, FaLinkedin, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { MdEmail } from 'react-icons/md';
 
 const ContactUsPage = () => {
     return (

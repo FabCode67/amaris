@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import Image from 'next/image'; // If you're using Next.js
+import Image from 'next/image';
 import { ArrowRight } from "lucide-react";
 import Parteners from "./WhoWeAre";
 
@@ -32,8 +32,8 @@ const AboutUsSection = () => {
     };
 
     return (
-        <section  className="bg-white w-full">
-            <div className="max-w-7xl mx-auto self-center bg-white justify-between py-16  flex items-center">
+        <section id="about"  className="bg-white w-full py-16">
+            <div className="container flex mx-auto px-4 md:px-8 max-w-7xl">
             <motion.div
                 className="w-full md:w-1/2  justify-start flex mr-4"
                 initial="hidden"

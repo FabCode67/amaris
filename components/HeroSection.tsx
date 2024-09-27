@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { ArrowRight, Calendar, Search } from "lucide-react";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
-import Parteners from "./WhoWeAre";
 
 const HeroSection = () => {
     const services = ["Dental Care", "General Medicine", "Nursing Care", "Reception", "Laboratory"];
@@ -71,8 +70,8 @@ const HeroSection = () => {
 
     return (
         <section className="relative bg-medBlue bg-[#00205A] min-h-screen text-white w-full h-fit py-16 my-auto justify-center items-center flex ">
-            <div className=" max-w-7xl mx-auto flex">
-                <motion.div
+            <div className="container flex  mx-auto px-4 md:px-8 max-w-7xl">
+            <motion.div
                     className="flex flex-col justify-center my-auto space-y-6 w-[50%]"
                     initial="hidden"
                     animate="visible"

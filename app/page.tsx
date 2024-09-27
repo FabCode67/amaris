@@ -1,7 +1,6 @@
 'use client'
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
-import WhoWeAre from '@/components/WhoWeAre';
 import AboutUsSection from '@/components/Aboutus';
 import MedicalServices from '@/components/Services';
 import TeamPage from '@/components/TeamSection';

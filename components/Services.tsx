@@ -1,13 +1,12 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image'; // Assuming you are using Next.js for image optimization
 import { CiMedicalCase } from 'react-icons/ci';
-import { FaAmbulance } from 'react-icons/fa';
 import { RiNurseFill } from 'react-icons/ri';
 import { TbDental } from 'react-icons/tb';
 
 const MedicalServices = () => {
     return (
-        <section id='services' className=" py-3 w-full bg-[#00205A] relative rounded-e-full rounded-se-3xl max-h-screen">
+        <section id='services' className=" py-3 w-full bg-[#00205A] relative h-fit rounded-e-full rounded-se-3xl min-h-screen">
             <div className="max-w-7xl flex justify-center items-center self-center mx-auto">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
                 <div className='abslo absolute top-0'>
