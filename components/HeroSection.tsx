@@ -10,16 +10,27 @@ const HeroSection = () => {
     const [currentServiceText, setCurrentServiceText] = useState("");
     const [isTyping, setIsTyping] = useState(true);
     const [charIndex, setCharIndex] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
     const router = useRouter();
+
+    const TYPING_SPEED = 100;
+    const DELETING_SPEED = 50;
+    const PAUSE_DURATION = 2000;
+
     useEffect(() => {
         let typingTimeout: NodeJS.Timeout;
+
         if (isTyping && charIndex < services[currentServiceIndex].length) {
             typingTimeout = setTimeout(() => {
                 setCurrentServiceText((prev) => prev + services[currentServiceIndex][charIndex]);
                 setCharIndex((prev) => prev + 1);
-            }, 100); 
-        } else if (charIndex === services[currentServiceIndex].length) {
-            setTimeout(() => setIsTyping(false), 2000);
+            }, TYPING_SPEED);
+        } else if (isTyping && charIndex === services[currentServiceIndex].length) {
+            setIsPaused(true);  // Pause after typing a service
+            setTimeout(() => {
+                setIsTyping(false);
+                setIsPaused(false);
+            }, PAUSE_DURATION);
         }
 
         return () => clearTimeout(typingTimeout);
@@ -27,20 +38,25 @@ const HeroSection = () => {
 
     useEffect(() => {
         let deletingTimeout: NodeJS.Timeout;
+
         if (!isTyping && charIndex > 0) {
             deletingTimeout = setTimeout(() => {
                 setCurrentServiceText((prev) => prev.slice(0, -1));
                 setCharIndex((prev) => prev - 1);
-            }, 100); 
-        } else if (!isTyping && charIndex === 0) {
-            setIsTyping(true);
-            setCurrentServiceIndex((prevIndex) =>
-                prevIndex === services.length - 1 ? 0 : prevIndex + 1
-            );
+            }, DELETING_SPEED);
+        } else if (!isTyping && charIndex === 0 && !isPaused) {
+            setIsPaused(true);
+            setTimeout(() => {
+                setIsTyping(true);
+                setCurrentServiceIndex((prevIndex) =>
+                    prevIndex === services.length - 1 ? 0 : prevIndex + 1
+                );
+                setIsPaused(false);
+            }, 500);  // Pause before typing the next service
         }
 
         return () => clearTimeout(deletingTimeout);
-    }, [isTyping, charIndex, services.length]);
+    }, [isTyping, charIndex, isPaused, services.length]);
 
     const containerVariants = {
         hidden: { opacity: 0, y: -50 },
@@ -66,8 +82,8 @@ const HeroSection = () => {
 
     return (
         <section className="relative bg-medBlue bg-[#00205A] min-h-screen text-white w-full h-fit py-16 my-auto justify-center items-center flex ">
-            <div className="container flex md:flex-row flex-col  mx-auto px-4 md:px-8 md:max-w-7xl w-full md:space-y-0 space-y-6">
-            <motion.div
+            <div className="container flex md:flex-row flex-col mx-auto px-4 md:px-8 md:max-w-7xl w-full md:space-y-0 space-y-6">
+                <motion.div
                     className="flex flex-col justify-center my-auto space-y-6 md:w-[50%] w-full"
                     initial="hidden"
                     animate="visible"
@@ -84,11 +100,10 @@ const HeroSection = () => {
                     </div>
                     <div className="space-y-4">
                         <Button
-                            onClick={() => 
-                                router.push("#team")
-                            }
-                         className="bg-medGreen hover:bg-[#334C7B] border-white border">
-                            Meet with Our Clincsians <span><ArrowDown width={40} /></span>
+                            onClick={() => router.push("#team")}
+                            className="bg-medGreen hover:bg-[#334C7B] border-white border"
+                        >
+                            Meet with Our Clinicians <span><ArrowDown width={40} /></span>
                         </Button>
                     </div>
                 </motion.div>
@@ -104,9 +119,9 @@ const HeroSection = () => {
                             <img src="/docs.svg" alt="Doctors" className="w-full rounded-full" />
                         </div>
                     </div>
-                    
+
                     <motion.div
-                        className="absolute backdrop-blur-2xl text-xs px-2 py-1  rounded-lg shadow-md bottom-2 flex flex-col right-4"
+                        className="absolute backdrop-blur-2xl text-xs px-2 py-1 rounded-lg shadow-md bottom-2 flex flex-col right-4"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 1, duration: 0.8 }}
@@ -124,7 +139,7 @@ const HeroSection = () => {
                         <Search className="flex my-auto justify-center mr-3" />
                         <div className="flex flex-col">
                             <p className="font-semibold">Well Qualified doctors</p>
-                            <p>Treate with care</p>
+                            <p>Treat with care</p>
                         </div>
                     </motion.div>
 
@@ -141,9 +156,7 @@ const HeroSection = () => {
                         </div>
                     </motion.div>
                 </motion.div>
-
             </div>
-           
         </section>
     );
 };

@@ -11,10 +11,7 @@ import SubFooter from '@/components/SubFooter';
 export default function Home() {
   return (
     <>
-      {/* Fixed Navbar */}
       <Navbar />
-      
-      {/* Main Content */}
       <main className="mt-16 flex flex-col bg-[#CCD2DE]">
         <HeroSection />
         <section id='about'>

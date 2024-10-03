@@ -173,8 +173,6 @@ const NewAppointment = ({ isModalVisible, selectedUser, handleCancel }: NewAppoi
         link.download = "appointment-summary.txt";
         link.click();
     };
-console.log("Ava =>>>>>>>>>>>",availableDates);
-
     return (
         <><Dialog open={isModalVisible} onOpenChange={handleCancel}>
             <DialogContent className=' md:w-full w-[95%]'>
