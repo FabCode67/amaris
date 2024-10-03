@@ -21,7 +21,18 @@ const Footer = () => {
             <FaLinkedinIn className="hover:text-white cursor-pointer" size={20} />
           </div>
         </div>
-
+        <div className='md:block hidden'>
+          <h3 className="text-xl font-semibold text-white mb-4">Our Services</h3>
+          <ul className="space-y-2">
+            <li className="hover:text-white cursor-pointer">Dental Care</li>
+            <li className="hover:text-white cursor-pointer">General Medecine</li>
+            <li className="hover:text-white cursor-pointer">Nursing Care</li>
+            <li className="hover:text-white cursor-pointer">Laboratory</li>
+            <li className="hover:text-white cursor-pointer">Teeth Whitening</li>
+            <li className="hover:text-white cursor-pointer">Dental Bridges</li>
+          </ul>
+        </div>
+        <div className='grid grid-cols-2 md:hidden  w-full'>
         <div>
           <h3 className="text-xl font-semibold text-white mb-4">Our Services</h3>
           <ul className="space-y-2">
@@ -37,49 +48,71 @@ const Footer = () => {
           <h3 className="text-xl font-semibold text-white mb-4">Quick Links</h3>
           <ul className="space-y-2">
            <li className="hover:text-white cursor-pointer">
-            <Link href="/">Home</Link>
+            <Link href="#">Home</Link>
            </li>
               <li className="hover:text-white cursor-pointer">
-                <Link href="/services">Services</Link>
+                <Link href="#services">Services</Link>
                 </li>
                 <li className="hover:text-white cursor-pointer">
-                <Link href="/doctors">Doctors</Link>
+                <Link href="#team">Doctors</Link>
                 </li>
                 <li className="hover:text-white cursor-pointer">
-                <Link href="/about">About us</Link>
+                <Link href="#about">About us</Link>
                 </li>
                 <li className="hover:text-white cursor-pointer">
-                <Link href="/contact">Contact us</Link>
+                <Link href="#contact">Contact us</Link>
                 </li>
                 
           </ul>
         </div>
-        <div className="border-l border-gray-700 pl-8">
+        </div>
+        <div className='md:block hidden'>
+          <h3 className="text-xl font-semibold text-white mb-4">Quick Links</h3>
+          <ul className="space-y-2">
+           <li className="hover:text-white cursor-pointer">
+            <Link href="#">Home</Link>
+           </li>
+              <li className="hover:text-white cursor-pointer">
+                <Link href="#services">Services</Link>
+                </li>
+                <li className="hover:text-white cursor-pointer">
+                <Link href="#team">Doctors</Link>
+                </li>
+                <li className="hover:text-white cursor-pointer">
+                <Link href="#about">About us</Link>
+                </li>
+                <li className="hover:text-white cursor-pointer">
+                <Link href="#contact">Contact us</Link>
+                </li>
+                
+          </ul>
+        </div>
+        <div className="md:border-l border-gray-700 md:pl-8 pl-0">
           <h3 className="text-xl font-semibold text-white mb-4">Opening Hours</h3>
           <ul className="space-y-2">
             <li className="flex justify-between">
               <span>Monday</span>
-              <span>8:00am - 12:00pm</span>
+              <span>8:00am - 8:00pm</span>
             </li>
             <li className="flex justify-between">
               <span>Tuesday</span>
-              <span>8:00am - 12:00pm</span>
+              <span>8:00am - 8:00pm</span>
             </li>
             <li className="flex justify-between">
               <span>Wednesday</span>
-              <span>8:00am - 12:00pm</span>
+              <span>8:00am - 8:00pm</span>
             </li>
             <li className="flex justify-between">
               <span>Thursday</span>
-              <span>8:00am - 12:00pm</span>
+              <span>8:00am - 8:00pm</span>
             </li>
             <li className="flex justify-between">
               <span>Friday</span>
-              <span>8:00am - 12:00pm</span>
+              <span>8:00am - 8:00pm</span>
             </li>
             <li className="flex justify-between">
               <span>Sunday</span>
-              <span>8:00am - 12:00pm</span>
+              <span>8:00am - 8:00pm</span>
             </li>
           </ul>
         </div>

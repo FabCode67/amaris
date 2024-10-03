@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, Calendar, Search } from "lucide-react";
+import { ArrowDown, Calendar, Search } from "lucide-react";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const HeroSection = () => {
     const services = ["Dental Care", "General Medicine", "Nursing Care", "Reception", "Laboratory"];
@@ -9,17 +10,15 @@ const HeroSection = () => {
     const [currentServiceText, setCurrentServiceText] = useState("");
     const [isTyping, setIsTyping] = useState(true);
     const [charIndex, setCharIndex] = useState(0);
-
+    const router = useRouter();
     useEffect(() => {
         let typingTimeout: NodeJS.Timeout;
         if (isTyping && charIndex < services[currentServiceIndex].length) {
-            // Type the next character
             typingTimeout = setTimeout(() => {
                 setCurrentServiceText((prev) => prev + services[currentServiceIndex][charIndex]);
                 setCharIndex((prev) => prev + 1);
-            }, 100); // Adjust typing speed here
+            }, 100); 
         } else if (charIndex === services[currentServiceIndex].length) {
-            // Finished typing, wait for 2 seconds before deleting
             setTimeout(() => setIsTyping(false), 2000);
         }
 
@@ -29,13 +28,11 @@ const HeroSection = () => {
     useEffect(() => {
         let deletingTimeout: NodeJS.Timeout;
         if (!isTyping && charIndex > 0) {
-            // Delete the current character
             deletingTimeout = setTimeout(() => {
                 setCurrentServiceText((prev) => prev.slice(0, -1));
                 setCharIndex((prev) => prev - 1);
-            }, 100); // Adjust deleting speed here
+            }, 100); 
         } else if (!isTyping && charIndex === 0) {
-            // Move to the next service after deleting the current one
             setIsTyping(true);
             setCurrentServiceIndex((prevIndex) =>
                 prevIndex === services.length - 1 ? 0 : prevIndex + 1
@@ -86,8 +83,12 @@ const HeroSection = () => {
                         </span>
                     </div>
                     <div className="space-y-4">
-                        <Button className="bg-medGreen hover:bg-[#334C7B] border-white border">
-                            Book an appointment <span><ArrowRight width={40} /></span>
+                        <Button
+                            onClick={() => 
+                                router.push("#team")
+                            }
+                         className="bg-medGreen hover:bg-[#334C7B] border-white border">
+                            Meet with Our Clincsians <span><ArrowDown width={40} /></span>
                         </Button>
                     </div>
                 </motion.div>
@@ -142,9 +143,7 @@ const HeroSection = () => {
                 </motion.div>
 
             </div>
-            {/* <Parteners /> */}
-
-
+           
         </section>
     );
 };
