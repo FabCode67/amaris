@@ -10,10 +10,9 @@ const ContactUsPage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <div className="flex flex-col justify-center">
                         <h3 className="md:text-6xl text-4xl font-semibold text-gray-800 mb-6 uppercase ">Get in Touch</h3>
-                        <p className=" mb-6 text-xl uppercase">
+                        <p className=" mb-6 md:text-xl text-sm font-medium uppercase">
                             If you have any questions, feel free to reach out to us. We are here to help you with any inquiries or information you may need.
                         </p>
-
                         <div className='flex flex-col space-y-4'>
                             <div className='flex flex-col space-y-1'>
                                 <h1 className='text-xl font-semibold text-gray-800'>Location:</h1>
