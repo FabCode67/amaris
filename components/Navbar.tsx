@@ -16,9 +16,9 @@ const Navbar = () => {
 
   return (
     <nav className="fixed w-full top-0 bg-white shadow-md z-50">
-      <div className="max-w-7xl mx-auto flex justify-between items-center py-4 px-8">
+      <div className="max-w-7xl mx-auto flex justify-between items-center py-4 md:px-8 px-2">
         <Link href="/" className="text-medBlue font-bold text-xl">
-          <Image height={300} width={300} src="/amaris_logo1.JPG" alt="Amaris" className="h-12 w-32" />
+          <Image height={300} width={300} src="/amaris_logo1.JPG" alt="Amaris" className="md:h-12 md:w-32 h-10 w-28" />
         </Link>
         <div className="md:hidden">
           <button onClick={() => setMenuOpen(!menuOpen)} className="text-medBlue focus:outline-none">
