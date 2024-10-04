@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className="space-x-4 hidden md:block">
           <Button
             onClick={() => handleNavigation('https://xanahealth.online/login')}
-            variant="outline" className="text-medBlue border-medBlue">Sign in</Button>
+            variant="secondary" className="text-white border-medBlue">Sign in</Button>
         </div>
       </div>
       {menuOpen && (

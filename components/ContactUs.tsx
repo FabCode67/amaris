@@ -5,8 +5,6 @@ const ContactUsPage = () => {
     return (
         <section id='contact' className="bg-[#CCD2DE] min-h-screen h-fit text-black py-16">
             <div className="container max-w-7xl  mx-auto px-4 md:px-8">
-                <h2 className="text-center text-4xl font-bold  mb-12">Contact Us</h2>
-
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <div className="flex flex-col justify-center">
                         <h3 className="md:text-6xl text-4xl font-semibold text-gray-800 mb-6 uppercase ">Get in Touch</h3>

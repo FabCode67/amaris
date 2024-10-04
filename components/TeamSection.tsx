@@ -109,7 +109,7 @@ const TeamPage = () => {
                     </motion.div>
                     <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 md:w-[70%] md:mt-0 mt-5 w-full">
                         {Array.isArray(teamData) ? (
-                            teamData.map((member: Doctor, index: number) => (
+                            teamData.filter((member) => member.active).map((member, index) => (
                                 <motion.div
                                     key={index}
                                     className="bg-white md:p-3 p-1 text-sm md:rounded-xl rounded-none shadow-lg flex h-fit flex-col items-center space-y-2"
