@@ -24,7 +24,7 @@ const MedicalServices = () => {
                                     className="bg-white p-2 py-10 rounded-xl md:w-[15rem] w-[10rem] shadow-lg flex flex-col items-center space-y-4"
                                 >
                                     <div className="text-teal-500">
-                                        <CiMedicalCase className="text-7xl" />
+                                        <CiMedicalCase className="text-7xl text-[#00205A]" />
                                     </div>
                                     <h1 className="text-xl font-bold text-gray-800">General consultation</h1>
                                     <p className="text-gray-700">
@@ -39,7 +39,7 @@ const MedicalServices = () => {
                                     className="bg-white p-2 rounded-xl py-10 md:w-[15rem] w-[10rem] shadow-lg flex flex-col items-center space-y-4"
                                 >
                                     <div className="text-teal-500">
-                                        <RiNurseFill className="text-7xl" />
+                                        <RiNurseFill className="text-7xl text-[#00205A]" />
                                     </div>
                                     <h1 className="text-xl font-bold text-gray-800">Nursing Care</h1>
                                     <p className="text-gray-700">
@@ -56,7 +56,7 @@ const MedicalServices = () => {
                                 className="bg-white p-2 rounded-xl py-10 md:w-[18rem] w-[11rem] shadow-lg flex flex-col items-center space-y-4"
                             >
                                 <div className="text-teal-500">
-                                    <TbDental className="text-7xl" />
+                                    <TbDental className="text-7xl text-[#00205A]" />
                                 </div>
                                 <h1 className="text-xl font-bold text-gray-800">Dental Care</h1>
                                 <p className="text-gray-700">
