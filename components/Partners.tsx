@@ -20,7 +20,6 @@ const Parteners = () => {
                             'eden.png',
                             'xana.webp',
                             'old.png',
-                            'sante.png',
                             'moh.png',
                             'karisimbi.png',
                             'eden.png',
