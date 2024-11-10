@@ -73,9 +73,8 @@ const TeamPage = () => {
                             <h3 className="text-lg font-medium text-gray-800">Angelo IGITEGO</h3>
                         </div>
                         <div className="text-center">
-                            <h3 className="text-xl font-semibold mt-0 text-gray-800">CEO & CTO</h3>
+                            <h3 className="text-xl font-semibold mt-0 text-gray-800">Managing Director</h3>
                         </div>
-
                         <div className="flex space-x-4 text-[#334C7B] mt-4">
                             <a target="_blank" rel="noopener noreferrer"
                                 href={`https://x.com/angelo_igitego`}
@@ -109,7 +108,7 @@ const TeamPage = () => {
                     </motion.div>
                     <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 md:w-[70%] md:mt-0 mt-5 w-full">
                         {Array.isArray(teamData) ? (
-                            teamData.filter((member) => member.active).map((member, index) => (
+                            teamData.filter((member) => member.active).filter((member) =>  member?.role !== "receptionist" && member?.role !== "lab_technician" && member?.role !== "nurse" ).map((member, index) => (
                                 <motion.div
                                     key={index}
                                     className="bg-white md:p-3 p-1 text-sm md:rounded-xl rounded-none shadow-lg flex h-fit flex-col items-center space-y-2"

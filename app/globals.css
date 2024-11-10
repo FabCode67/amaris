@@ -3,10 +3,8 @@
 @tailwind utilities;
 
 
-/* Add these styles to your CSS file */
 .moving-logos {
   animation: scroll 20s linear infinite;
-  /* width should be large enough to fit all logos in one line */
   width: calc(100% + 300px); 
 }
 
