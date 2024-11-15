@@ -11,11 +11,11 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="bg-blue-100 text-[#334C7B] hover:bg-blue-100 text-lg py-1">
-              Leading Dental Care Provider
+              Leading Medical Care Provider
             </div>
 
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900">
-              Your Smile, Our Priority at{" "}
+            Your wellbeing is the reason of our existence at{" "}
               <span className="text-[#334C7B]">Amaris Medical Clinic</span>
             </h1>
 

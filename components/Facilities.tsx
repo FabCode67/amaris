@@ -12,7 +12,7 @@ const FacilitiesPage = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-white rounded-lg shadow-lg"
           >
-            <div className="lg:p-6">
+            <div className="p-6">
               <div className="bg-blue-100 lg:p-3 p-0 rounded-lg inline-block">
                 <Users className="w-8 h-8 text-[#334C7B]" />
               </div>
@@ -48,7 +48,7 @@ const FacilitiesPage = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-white rounded-lg shadow-lg"
           >
-            <div className="lg:p-6 p-1 ">
+            <div className="p-6  ">
               <div className="bg-blue-100  lg:p-3 p-0 rounded-lg inline-block mb-4">
                 <Stethoscope className="w-8 h-8 text-[#334C7B]" />
               </div>
@@ -66,7 +66,7 @@ const FacilitiesPage = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-white rounded-lg shadow-lg"
           >
-            <div className="lg:p-6 p-1 ">
+            <div className="p-6">
               <div className="bg-blue-100 lg:p-3 p-0 rounded-lg inline-block mb-4">
                 <Scissors className="w-8 h-8 text-[#334C7B]" />
               </div>
@@ -84,7 +84,7 @@ const FacilitiesPage = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-white rounded-lg shadow-lg"
           >
-            <div className="lg:p-6 p-1 ">
+            <div className="p-6">
               <div className="bg-blue-100  lg:p-3 p-0 rounded-lg inline-block mb-4">
                 <Droplet className="w-8 h-8 text-[#334C7B]" />
               </div>
@@ -102,7 +102,7 @@ const FacilitiesPage = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-white rounded-lg shadow-lg"
           >
-            <div className="lg:p-6 p-1 ">
+            <div className="p-6">
               <div className="bg-blue-100 lg:p-3 p-0 rounded-lg inline-block mb-4">
                 <Battery className="w-8 h-8 text-[#334C7B]" />
               </div>
@@ -120,7 +120,7 @@ const FacilitiesPage = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-white rounded-lg shadow-lg col-span-2"
           >
-            <div className="lg:p-6">
+            <div className="p-6">
               <div className="bg-blue-100 lg:p-3 p-0 rounded-lg inline-block mb-4">
                 <LightbulbIcon className="w-8 h-8 text-[#334C7B]" />
               </div>
