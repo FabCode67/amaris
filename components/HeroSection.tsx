@@ -5,7 +5,7 @@ import { Phone } from "lucide-react";
 const HeroSection = () => {
 
   return (
-    <div className="relative overflow-hidden md:max-w-7xl w-full h-fit bg-white">
+    <div className="relative overflow-hidden w-full h-fit bg-white">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-white z-0" />
       <div className="container px-4 md:px-8 md:max-w-7xl w-full mx-auto my-auto justify-center items-center py-16 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
