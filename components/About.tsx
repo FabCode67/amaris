@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent } from "../components/ui/card"
+import { Card, CardContent } from "./ui/card"
 
 import { Heart, Users, Building2, Stethoscope, Trophy, Clock } from "lucide-react";
 
@@ -23,7 +23,7 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="bg-white px-4 md:px-8 md:max-w-7xl">
+    <div className="bg-white w-full">
       <div className="relative md:h-[200px] h-[100px] overflow-hidden">
         <img
           src="/hero5.jpg"
@@ -36,7 +36,7 @@ const AboutPage = () => {
           </h1>
         </div>
       </div>
-      <div className="container mx-auto px-4 py-16">
+      <div className="container py-16 flex flex-col justify-center mx-auto px-4 md:px-8 md:max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
           <div className="bg-blue-100 text-[#334C7B] hover:bg-blue-100 text-lg px-2 py-1">
