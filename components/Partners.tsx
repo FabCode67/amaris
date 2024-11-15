@@ -38,7 +38,7 @@ const insurancePartners = [
 
 const PartnersPage = () => {
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div id='partners' className="min-h-screen pb-12 bg-gray-50">
             <section className="bg-gradient-to-b bg-[#334C7B]  text-white">
                 <div className="container mx-auto px-4 md:py-16 py-10">
                     <div className="max-w-3xl mx-auto text-center">

@@ -10,7 +10,7 @@ const Footer = () => {
     { name: 'Team', href: '#team' },
     { name: 'Facilities', href: '#facilities' },
     { name: 'Partners', href: '#partners' },
-    { name: 'Login', href: '#login' },
+    { name: 'Login', href: 'https://xanahealth.online/login' },
   ];
 
   const workingHours = [

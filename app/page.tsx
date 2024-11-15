@@ -15,9 +15,7 @@ export default function Home() {
       <Navbar />
       <main className="mt-16 flex flex-col bg-[#CCD2DE]">
         <HeroSection />
-        <section id='about'>
         <AboutUsSection />
-        </section>
         <Parteners />
         <MedicalServices />
         <TeamPage />

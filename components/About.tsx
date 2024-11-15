@@ -23,7 +23,7 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="bg-white w-full">
+    <div id='about' className="bg-white w-full">
       <div className="relative md:h-[200px] h-[100px] overflow-hidden">
         <img
           src="/hero5.jpg"
