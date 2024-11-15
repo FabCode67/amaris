@@ -14,7 +14,7 @@ const HeroSection = () => {
               Leading Medical Care Provider
             </div>
 
-            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900">
+            <h1 className="text-2xl lg:text-4xl font-bold text-gray-900">
             Your wellbeing is the reason of our existence at{" "}
               <span className="text-[#334C7B]">Amaris Medical Clinic</span>
             </h1>
