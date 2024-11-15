@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 const FacilitiesPage = () => {
   return (
     <section id="facilities" className="bg-gray-50 py-16">
-      <div className="container mx-auto px-4 md:px-8 md:max-w-7xl">
+      <div className="container mx-auto  px-4 md:px-8 md:max-w-7xl">
         <h2 className="text-center text-4xl font-bold text-[#334C7B] mb-12">Facilities & Technology</h2>
         <div className="grid md:grid-cols-4 gap-4">
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-white rounded-lg shadow-lg"
           >
-            <div className="p-6">
-              <div className="bg-blue-100 p-3 rounded-lg inline-block mb-4">
+            <div className="lg:p-6">
+              <div className="bg-blue-100 lg:p-3 p-0 rounded-lg inline-block">
                 <Users className="w-8 h-8 text-[#334C7B]" />
               </div>
               <CardHeader>
@@ -30,8 +30,8 @@ const FacilitiesPage = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-white rounded-lg shadow-lg"
           >
-            <div className="p-6">
-              <div className="bg-blue-100 p-3 rounded-lg inline-block mb-4">
+            <div className="p-6 ">
+              <div className="bg-blue-100 lg:p-3 p-0 rounded-lg inline-block mb-4">
                 <Microscope className="w-8 h-8 text-[#334C7B]" />
               </div>
               <CardHeader>
@@ -48,8 +48,8 @@ const FacilitiesPage = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-white rounded-lg shadow-lg"
           >
-            <div className="p-6">
-              <div className="bg-blue-100 p-3 rounded-lg inline-block mb-4">
+            <div className="lg:p-6 p-1 ">
+              <div className="bg-blue-100  lg:p-3 p-0 rounded-lg inline-block mb-4">
                 <Stethoscope className="w-8 h-8 text-[#334C7B]" />
               </div>
               <CardHeader>
@@ -66,8 +66,8 @@ const FacilitiesPage = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-white rounded-lg shadow-lg"
           >
-            <div className="p-6">
-              <div className="bg-blue-100 p-3 rounded-lg inline-block mb-4">
+            <div className="lg:p-6 p-1 ">
+              <div className="bg-blue-100 lg:p-3 p-0 rounded-lg inline-block mb-4">
                 <Scissors className="w-8 h-8 text-[#334C7B]" />
               </div>
               <CardHeader>
@@ -84,8 +84,8 @@ const FacilitiesPage = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-white rounded-lg shadow-lg"
           >
-            <div className="p-6">
-              <div className="bg-blue-100 p-3 rounded-lg inline-block mb-4">
+            <div className="lg:p-6 p-1 ">
+              <div className="bg-blue-100  lg:p-3 p-0 rounded-lg inline-block mb-4">
                 <Droplet className="w-8 h-8 text-[#334C7B]" />
               </div>
               <CardHeader>
@@ -102,8 +102,8 @@ const FacilitiesPage = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-white rounded-lg shadow-lg"
           >
-            <div className="p-6">
-              <div className="bg-blue-100 p-3 rounded-lg inline-block mb-4">
+            <div className="lg:p-6 p-1 ">
+              <div className="bg-blue-100 lg:p-3 p-0 rounded-lg inline-block mb-4">
                 <Battery className="w-8 h-8 text-[#334C7B]" />
               </div>
               <CardHeader>
@@ -120,8 +120,8 @@ const FacilitiesPage = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-white rounded-lg shadow-lg col-span-2"
           >
-            <div className="p-6">
-              <div className="bg-blue-100 p-3 rounded-lg inline-block mb-4">
+            <div className="lg:p-6">
+              <div className="bg-blue-100 lg:p-3 p-0 rounded-lg inline-block mb-4">
                 <LightbulbIcon className="w-8 h-8 text-[#334C7B]" />
               </div>
               <CardHeader>
