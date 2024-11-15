@@ -28,8 +28,10 @@ const Navbar = () => {
         <div className={`md:flex space-x-8 text-medBlue ${menuOpen ? 'block' : 'hidden'} md:block hidden`}>
           <Link href="/" className="hover:text-blue-900">Home</Link>
           <Link href="#about" className="hover:text-blue-900">About us</Link>
+          <Link href="#facilities" className="hover:text-blue-900">Partners</Link>
           <Link href="#services" className="hover:text-blue-900">Services</Link>
           <Link href="#team" className="hover:text-blue-900">Team</Link>
+          <Link href="#facilities" className="hover:text-blue-900">Facilities</Link>
           <Link href="#contact" className="hover:text-blue-900">Contact us</Link>
         </div>
         <div className="space-x-4 hidden md:block">
@@ -42,8 +44,10 @@ const Navbar = () => {
         <div className="md:hidden bg-white py-4">
           <Link onClick={() => setMenuOpen(!menuOpen)} href="/" className="block px-8 py-2 text-medBlue hover:text-blue-900">Home</Link>
           <Link onClick={() => setMenuOpen(!menuOpen)} href="#about" className="block px-8 py-2 text-medBlue hover:text-blue-900">About us</Link>
+          <Link onClick={() => setMenuOpen(!menuOpen)} href="#partners" className="block px-8 py-2 text-medBlue hover:text-blue-900">Partners</Link>
           <Link onClick={() => setMenuOpen(!menuOpen)} href="#services" className="block px-8 py-2 text-medBlue hover:text-blue-900">Services</Link>
           <Link onClick={() => setMenuOpen(!menuOpen)} href="#team" className="block px-8 py-2 text-medBlue hover:text-blue-900">Team</Link>
+          <Link onClick={() => setMenuOpen(!menuOpen)} href="#facilities" className="block px-8 py-2 text-medBlue hover:text-blue-900">facilities</Link>
           <Link onClick={() => setMenuOpen(!menuOpen)} href="#contact" className="block px-8 py-2 text-medBlue hover:text-blue-900">Contact us</Link>
         </div>
       )}
