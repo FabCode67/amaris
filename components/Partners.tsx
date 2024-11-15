@@ -62,7 +62,7 @@ const PartnersPage = () => {
             </section>
 
             <section className="container mx-auto px-4 py-12">
-                <div className="grid grid-cols-3 gap-8">
+                <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
                     {insurancePartners.map((partner) => (
                         <div key={partner.id} className="overflow-hidden items-center w-full h-full hover:shadow-lg shadow-lg justify-center transition-shadow m-auto duration-300">
                             <img
