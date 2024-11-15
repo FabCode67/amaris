@@ -28,7 +28,7 @@ const Navbar = () => {
         <div className={`md:flex space-x-8 text-medBlue ${menuOpen ? 'block' : 'hidden'} md:block hidden`}>
           <Link href="/" className="hover:text-blue-900">Home</Link>
           <Link href="#about" className="hover:text-blue-900">About us</Link>
-          <Link href="#facilities" className="hover:text-blue-900">Partners</Link>
+          <Link href="#partners" className="hover:text-blue-900">Partners</Link>
           <Link href="#services" className="hover:text-blue-900">Services</Link>
           <Link href="#team" className="hover:text-blue-900">Team</Link>
           <Link href="#facilities" className="hover:text-blue-900">Facilities</Link>

@@ -37,7 +37,7 @@ const ServicesPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div id='services' className="min-h-screen bg-gray-50">
       <div className="relative  bg-[#334C7B] text-white md:py-20 py-10">
         <div className="container justify-center flex flex-col items-center mx-auto px-6">
           <h1 className="md:text-4xl text-2xl font-bold mb-4">Our Services</h1>
