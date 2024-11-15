@@ -34,7 +34,7 @@ interface NewAppointmentProps {
         first_name: string;
         last_name: string;
     };
-    handleCancel: () => void; // Add this line
+    handleCancel: () => void; 
 }
 
 const NewAppointment = ({ isModalVisible, selectedUser, handleCancel }: NewAppointmentProps) => {
@@ -44,8 +44,8 @@ const NewAppointment = ({ isModalVisible, selectedUser, handleCancel }: NewAppoi
     const [loading, setLoading] = useState(false);
     const [slotID, setSlotID] = useState<number>(0);
     const [selectedStartDate, setSelectedStartDate] = useState<Date>();
-    const [appointmentCreated, setAppointmentCreated] = useState(false); // New state for modal
-    const [appointmentSummary, setAppointmentSummary] = useState<AppointmentDataInterface>(); // For storing the appointment summary
+    const [appointmentCreated, setAppointmentCreated] = useState(false); 
+    const [appointmentSummary, setAppointmentSummary] = useState<AppointmentDataInterface>(); 
     const [appointment, setAppointment] = useState({
         title: "",
         patient_id: "",

@@ -6,7 +6,8 @@ import MedicalServices from '@/components/Services';
 import TeamPage from '@/components/TeamSection';
 import ContactUsPage from '@/components/ContactUs';
 import Footer from '@/components/Footer';
-import SubFooter from '@/components/SubFooter';
+import FacilitiesPage from '@/components/Facilities';
+import Parteners from '@/components/Partners';
 
 export default function Home() {
   return (
@@ -17,10 +18,12 @@ export default function Home() {
         <section id='about'>
         <AboutUsSection />
         </section>
+        <Parteners />
         <MedicalServices />
         <TeamPage />
+        <FacilitiesPage />
         <ContactUsPage />
-        <Footer /><SubFooter />
+        <Footer />
       </main>
     </>
   );
