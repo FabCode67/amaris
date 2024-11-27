@@ -1,8 +1,15 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
+import { useRouter } from 'next/navigation';
 
 const HeroSection = () => {
+
+  const router = useRouter();
+
+  const navigateToTeam = () => {
+    router.push('#team');
+  }
 
   return (
     <div className="relative overflow-hidden w-full h-fit bg-white">
@@ -36,13 +43,15 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-[#334C7B] text-white hover:bg-blue-700">
+              <Button onClick={navigateToTeam} size="lg" className="bg-[#334C7B] text-white hover:bg-blue-700">
                 Book Appointment
               </Button>
+              <a href="tel:+250788597772" className="text-[#334C7B] hover:text-blue-700">
               <Button size="lg" variant="outline" className="gap-2">
                 <Phone className="w-4 h-4" />
                 Call Us Now
               </Button>
+              </a>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4  h-full">
