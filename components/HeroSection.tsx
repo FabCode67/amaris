@@ -13,7 +13,7 @@ const HeroSection = () => {
   return (
     <div className="relative overflow-hidden w-full min-h-screen flex items-center bg-white">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-white opacity-70 z-0" />
-      <div className="container px-4 md:px-8 max-w-7xl w-full mx-auto relative z-10">
+      <div className="container px-4 md:px-8 max-w-7xl md:py-4 py-8 w-full mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-10">
             <div className="inline-block px-4 py-2 bg-blue-100/80 text-[#334C7B] rounded-full text-base font-medium tracking-wide">
