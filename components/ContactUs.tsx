@@ -7,6 +7,15 @@ const ContactUsPage = () => {
         <section id='contact' className=" min-h-screen bg-white h-fit text-black py-16">
             <div className="container max-w-7xl mx-auto px-4 md:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div className="flex justify-center h-full flex-col space-y-4">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1168.9204803476034!2d30.057366276401503!3d-1.9699674305961783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca540c061e9f9%3A0xb887f081d7845204!2sAmaris%20Medical%20Clinic!5e0!3m2!1sen!2srw!4v1737744476404!5m2!1sen!2srw" width="100%" height="350" loading="lazy"></iframe>
+                        <motion.img
+                            whileHover={{ scale: 1.02 }}
+                            src="/hero7.jpg"
+                            alt="Amaris Medical Clinic Interior"
+                            className="w-full h-[20rem] object-cover rounded-lg shadow-lg"
+                        />
+                    </div>
                     <div className="flex flex-col justify-center">
                         <h3 className="md:text-5xl text-4xl font-semibold text-gray-800 mb-6">Get in Touch</h3>
                         <Card className="mb-8 bg-[#CCD2DE] backdrop-blur">
@@ -39,8 +48,6 @@ const ContactUsPage = () => {
                                 <p className="text-gray-700 mb-2">Contact Person:</p>
                                 <p className="text-gray-900 font-medium">Angelo Igitego (CEO)</p>
                             </motion.div>
-
-                            {/* Contact Methods */}
                             <motion.div 
                                 whileHover={{ scale: 1.02 }}
                                 className="bg-[#CCD2DE] backdrop-blur p-4 rounded-lg shadow-sm"
@@ -101,20 +108,7 @@ const ContactUsPage = () => {
                             </motion.a>
                         </div>
                     </div>
-                    <div className="flex justify-center h-full flex-col space-y-4">
-                        <motion.img
-                            whileHover={{ scale: 1.02 }}
-                            src="/hero6.jpg"
-                            alt="Amaris Medical Clinic Exterior"
-                            className="w-full h-[20rem] object-cover rounded-lg shadow-lg"
-                        />
-                        <motion.img
-                            whileHover={{ scale: 1.02 }}
-                            src="/hero7.jpg"
-                            alt="Amaris Medical Clinic Interior"
-                            className="w-full h-[20rem] object-cover rounded-lg shadow-lg"
-                        />
-                    </div>
+                    
                 </div>
             </div>
         </section>
