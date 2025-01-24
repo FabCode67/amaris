@@ -71,8 +71,10 @@ const AboutPage = () => {
               </div>
               <div className="text-center">
                 <Clock className="w-8 h-8 text-green-500 mx-auto mb-2" />
-                <div className="text-3xl font-bold text-gray-900">24/7</div>
-                <div className="text-sm text-gray-600">Available Care</div>
+                <div className="text-xl font-bold text-gray-900">
+                  8:00 AM - 9:00 PM
+                </div>
+                <div className="text-sm text-gray-600">Available Care evey day</div>
               </div>
             </div>
           </div>

@@ -1,17 +1,25 @@
 import React from 'react';
 import {
- 
+
     Users,
     CheckCircle2,
     Percent,
     Building,
     Badge,
-    
+
 } from 'lucide-react';
 
 const insurancePartners = [
     {
         id: 1,
+        name: "RSSB",
+        logo: "/rssb.jpeg",
+        coverage: ["Outpatient Services", "Inpatient Care", "Specialized Treatments", "Emergency Services"],
+        benefits: ["Direct Billing Available", "Wide Network Coverage", "24/7 Customer Support"],
+
+    },
+    {
+        id: 2,
         name: "Old Mutual",
         logo: "/old.png",
         coverage: ["Outpatient Services", "Inpatient Care", "Specialized Treatments", "Emergency Services"],
@@ -19,7 +27,7 @@ const insurancePartners = [
 
     },
     {
-        id: 2,
+        id: 3,
         name: "Eden Care",
         logo: "eden.png",
         coverage: ["Primary Healthcare", "Specialist Consultations", "Maternity Care", "Dental Services"],
@@ -27,7 +35,7 @@ const insurancePartners = [
 
     },
     {
-        id: 3,
+        id: 4,
         name: "Radiant",
         logo: "/radiant.png",
         coverage: ["General Medical Services", "Surgical Procedures", "Prescription Medicine", "Lab Tests"],
@@ -60,9 +68,9 @@ const PartnersPage = () => {
                     </div>
                 </div>
             </section>
-
+            <div className="container py-16 flex flex-col justify-center mx-auto px-4 md:px-8 md:max-w-7xl">
             <section className="container mx-auto px-4 py-12">
-                <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
+                <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8">
                     {insurancePartners.map((partner) => (
                         <div key={partner.id} className="overflow-hidden items-center w-full h-full hover:shadow-lg shadow-lg justify-center transition-shadow m-auto duration-300">
                             <img
@@ -110,6 +118,7 @@ const PartnersPage = () => {
                     </div>
                 </div>
             </section>
+            </div>
         </div>
     );
 };

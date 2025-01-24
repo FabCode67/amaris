@@ -15,8 +15,8 @@ const Footer = () => {
 
   const workingHours = [
     { day: 'Monday - Friday', hours: '8:00 AM - 8:00 PM' },
-    { day: 'Saturday', hours: '8:00 AM - 8:00 PM' },
-    { day: 'Sunday', hours: '8:00 AM - 8:00 PM' },
+    { day: 'Saturday', hours: '8:00 AM - 9:00 PM' },
+    { day: 'Sunday', hours: '8:00 AM - 9:00 PM' },
   ];
 
   const coreValues = [
