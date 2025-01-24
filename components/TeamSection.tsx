@@ -68,7 +68,7 @@ const TeamPage = () => {
                             <Users className="w-8 h-8 text-[#334C7B]" />
                             <div>
                                 <h3 className="font-semibold text-gray-800">Expert Staff</h3>
-                                <p className="text-sm text-gray-600">1 Medical Doctor & 1 Dental Therapist</p>
+                                <p className="text-sm text-gray-600">2 Medical Doctor & 2 Dental Therapist</p>
                             </div>
                         </motion.div>
                         <motion.div 
@@ -93,7 +93,7 @@ const TeamPage = () => {
                         </motion.div>
                     </div>
                     <p className="text-gray-600 leading-relaxed max-w-4xl mx-auto text-center">
-                        As a general medicine and dental clinic, Amaris has one full time licensed medical doctor, one full dental
+                        As a general medicine and dental clinic, Amaris has two full time licensed medical doctor, two full dental
                         therapist, 2 fulltime licensed nurses with A0 degrees. The number of medical staff is expected to increase in the
                         future, as more insurance partnerships are secured, and after getting the proper regulatory approvals. Our team
                         regularly undergoes training and development to stay updated on the latest advancements in medicine.
