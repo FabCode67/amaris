@@ -47,7 +47,7 @@ const ServicesPage = () => {
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-white/10 transform skew-y-2"></div>
       </div>
-      <div className="container mx-auto px-6 py-16">
+      <div className="container py-16 flex flex-col justify-center mx-auto px-4 md:px-8 md:max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card key={index} className="transform transition-transform hover:scale-105">

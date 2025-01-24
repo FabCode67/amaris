@@ -9,8 +9,6 @@ const ContactUsPage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <div className="flex flex-col justify-center">
                         <h3 className="md:text-5xl text-4xl font-semibold text-gray-800 mb-6">Get in Touch</h3>
-                        
-                        {/* Location Description Card */}
                         <Card className="mb-8 bg-[#CCD2DE] backdrop-blur">
                             <CardContent className="p-6">
                                 <h4 className="text-xl font-semibold text-gray-800 mb-3 flex items-center">
