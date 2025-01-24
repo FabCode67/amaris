@@ -32,8 +32,8 @@ const TeamPage = () => {
         const fetchDoctors = async () => {
             try {
                 const response = await getDoctors();
-                if (response && Array.isArray(response.data)) {
-                    setTeamData(response.data);
+                if (response && Array.isArray(response)) {
+                    setTeamData(response);
                 } else {
                     console.error("Unexpected response structure:", response);
                     setTeamData([]);
