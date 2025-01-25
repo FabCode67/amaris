@@ -2,7 +2,7 @@ import { FaCalendarAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import getDoctors from '@/app/server/apis';
 import { useEffect, useState } from 'react';
-import { Linkedin, Phone, Users, GraduationCap, Award, LinkedinIcon } from 'lucide-react';
+import { Linkedin, Phone, Users, GraduationCap, Award } from 'lucide-react';
 import { BsTwitterX, BsWhatsapp } from 'react-icons/bs';
 import { TfiEmail } from 'react-icons/tfi';
 import NewAppointment from './Appointment';
@@ -100,32 +100,39 @@ const TeamPage = () => {
                     </p>
                 </div>
                 <div className="flex md:flex-row flex-col w-full md:space-x-4 space-x-0">
-                <motion.div
-                            whileHover={{ scale: 1.01 }}
-                            className="p-6 shadow rounded-xl flex flex-col items-center md:w-[30%] w-full md:h-[33rem] h-fit space-y-4"
-                        >
-                            <img src="/gm1.jpg" alt="team" className="object-cover h-[70%]" />
-                            <div className="text-center">
-                                <h3 className="text-lg font-medium text-gray-800">Godfrey Gafirita</h3>
-                            </div>
-                            <div className="text-center">
-                                <h3 className="text-xl font-semibold mt-0 text-gray-800">Managing Director</h3>
-                            </div>
-                            <div className="flex space-x-4 text-teal-600 mt-4">
-                                <a target="_blank" rel="noopener noreferrer" href="in/gafirita-godfrey">
-                                    <LinkedinIcon size={20} />
-                                </a>
-                                <a target="_blank" rel="noopener noreferrer" href="tel:+2500784012286">
-                                    <Phone size={20} />
-                                </a>
-                                <a target="_blank" href="mailto:dentalimaging100@gmail.com" rel="noopener noreferrer">
-                                    <TfiEmail size={20} />
-                                </a>
-                                <a target="_blank" rel="noopener noreferrer" href="https://wa.me/+2500784012286">
-                                    <BsWhatsapp size={20} />
-                                </a>
-                            </div>
-                        </motion.div>
+                    <motion.div
+                        whileHover={{ scale: 1.01 }}
+                        className="p-6 shadow rounded-xl flex flex-col items-center md:w-[30%] w-full md:h-[32rem] h-fit space-y-4"
+                    >
+                        <img
+                            src="/admin2.jpg"
+                            alt="team"
+                            className="object-cover h-full"
+                        />
+                        <div className="text-center">
+                            <h3 className="text-lg font-medium text-gray-800">Angelo IGITEGO</h3>
+                        </div>
+                        <div className="text-center">
+                            <h3 className="text-xl font-semibold mt-0 text-gray-800">Managing Director</h3>
+                        </div>
+                        <div className="flex space-x-4 text-[#334C7B] mt-4">
+                            <a target="_blank" rel="noopener noreferrer" href={`https://x.com/angelo_igitego`}>
+                                <BsTwitterX size={20} />
+                            </a>
+                            <a target="_blank" rel="noopener noreferrer" href={`in/angelo-igitego`}>
+                                <Linkedin size={20} />
+                            </a>
+                            <a target="_blank" rel="noopener noreferrer" href={`tel:+250788597772`}>
+                                <Phone size={20} />
+                            </a>
+                            <a target="_blank" href={`mailto:angelo.igitego@gmail.com`} rel="noopener noreferrer">
+                                <TfiEmail size={20} />
+                            </a>
+                            <a target="_blank" rel="noopener noreferrer" href={`https://wa.me/+250788597772`}>
+                                <BsWhatsapp size={20} />
+                            </a>
+                        </div>
+                    </motion.div>
                     <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 md:w-[70%] md:mt-0 mt-5 w-full">
                         {Array.isArray(teamData) ? (
                             teamData.filter((member) => member.active).filter((member) => member?.role !== "receptionist" && member?.role !== "lab_technician" && member?.role !== "nurse" && member?.role !== "finance_manager").map((member, index) => (
