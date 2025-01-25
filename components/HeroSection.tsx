@@ -7,7 +7,7 @@ const HeroSection = () => {
   const router = useRouter();
 
   const navigateToAppointment = () => {
-    router.push('/book-appointment');
+    router.push('#contact');
   }
 
   return (
