@@ -47,6 +47,7 @@ export const workingHours = [
   { day: "Monday – Friday", hours: "8:00 AM – 8:00 PM" },
   { day: "Saturday", hours: "8:00 AM – 9:00 PM" },
   { day: "Sunday", hours: "8:00 AM – 9:00 PM" },
+  { day: "Doctor Consultation Hours", hours: "7:00 AM – 10:00 AM (daily)" },
 ];
 
 export const navLinks = [
@@ -217,7 +218,6 @@ export const teamMembers: TeamMember[] = [
     role: "Clinic Director",
     credentials: "MD, MSc",
     bio: "A medical doctor with professional experience in clinical activities, research and quality improvement. He earned his Medical Degree from the University of Rwanda in 2018, and a Master of Science in Diabetes from the University of South Wales (UK). He worked in different district hospitals in Rwanda from 2018 to 2021, and has contributed to several research projects with 7 online publications. He holds a specialist certificate in Introduction to Quality Improvement and Patient Safety from the International Society for Quality in Health Care (ISQua). He has experience in research, emergency management, and working in low-resource settings, and is a trainer for Basic Life Support (BLS) and Advanced Cardiac Life Support (ACLS).",
-    hours: "7:00 AM – 10:00 AM, Monday – Sunday",
     email: "dusabimanaraban@gmail.com",
     phone: "+250 782 033 055",
     phoneHref: "tel:+250782033055",
