@@ -1,141 +1,135 @@
-import {  CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, Microscope, Scissors, Droplet, Stethoscope, Battery, LightbulbIcon } from "lucide-react";
-import { motion } from "framer-motion";
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
+import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import SectionHeading from "@/components/ui/section-heading";
+import { facilityImages } from "@/lib/site-data";
+
+const sizeToHeight: Record<string, string> = {
+  sm: "h-56",
+  md: "h-72",
+  lg: "h-96",
+};
 
 const FacilitiesPage = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const close = () => setActiveIndex(null);
+  const showNext = () =>
+    setActiveIndex((i) => (i === null ? null : (i + 1) % facilityImages.length));
+  const showPrev = () =>
+    setActiveIndex((i) =>
+      i === null ? null : (i - 1 + facilityImages.length) % facilityImages.length
+    );
+
   return (
-    <section id="facilities" className="bg-gray-50 py-16">
-      <div className="container mx-auto  px-4 md:px-8 md:max-w-7xl">
-        <h2 className="text-center text-4xl font-bold text-[#334C7B] mb-12">Facilities & Technology</h2>
-        <div className="grid md:grid-cols-4 gap-4">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="bg-white rounded-lg shadow-lg"
-          >
-            <div className="p-6">
-              <div className="bg-blue-100 lg:p-3 p-0 rounded-lg inline-block">
-                <Users className="w-8 h-8 text-[#334C7B]" />
+    <section id="facilities" className="bg-gray-50 py-20 md:py-28">
+      <div className="container mx-auto px-4 md:px-8 md:max-w-7xl">
+        <SectionHeading
+          eyebrow="Inside Amaris"
+          title="Facilities & Technology"
+          description="A closer look at our consultation rooms, dental unit, reception, laboratory and more."
+        />
+
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 mt-14 [column-fill:_balance]">
+          {facilityImages.map((facility, index) => (
+            <motion.button
+              key={facility.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: (index % 6) * 0.06 }}
+              onClick={() => setActiveIndex(index)}
+              className="group relative mb-5 w-full break-inside-avoid overflow-hidden rounded-2xl shadow-soft hover:shadow-soft-lg transition-shadow text-left"
+            >
+              <div className={`relative w-full ${sizeToHeight[facility.size]}`}>
+                <Image
+                  src={facility.src}
+                  alt={facility.title}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <ZoomIn className="w-4 h-4 text-medBlue" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                  <h3 className="text-white font-heading font-bold">{facility.title}</h3>
+                  <p className="text-white/85 text-xs mt-1 leading-relaxed">{facility.caption}</p>
+                </div>
               </div>
-              <CardHeader>
-                <CardTitle>Reception & Waiting Area</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  A fully equipped reception desk and comfortable waiting area for patients.
-                </CardDescription>
-              </CardContent>
-            </div>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="bg-white rounded-lg shadow-lg"
-          >
-            <div className="p-6 ">
-              <div className="bg-blue-100 lg:p-3 p-0 rounded-lg inline-block mb-4">
-                <Microscope className="w-8 h-8 text-[#334C7B]" />
-              </div>
-              <CardHeader>
-                <CardTitle>Laboratory</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Laboratory room with hematology and biochemistry testing capabilities.
-                </CardDescription>
-              </CardContent>
-            </div>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="bg-white rounded-lg shadow-lg"
-          >
-            <div className="p-6  ">
-              <div className="bg-blue-100  lg:p-3 p-0 rounded-lg inline-block mb-4">
-                <Stethoscope className="w-8 h-8 text-[#334C7B]" />
-              </div>
-              <CardHeader>
-                <CardTitle>Consultation Room</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  General consultation room with a gynecology examination table.
-                </CardDescription>
-              </CardContent>
-            </div>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="bg-white rounded-lg shadow-lg"
-          >
-            <div className="p-6">
-              <div className="bg-blue-100 lg:p-3 p-0 rounded-lg inline-block mb-4">
-                <Scissors className="w-8 h-8 text-[#334C7B]" />
-              </div>
-              <CardHeader>
-                <CardTitle>Minor Surgery Room</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Dedicated room for minor surgical procedures.
-                </CardDescription>
-              </CardContent>
-            </div>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="bg-white rounded-lg shadow-lg"
-          >
-            <div className="p-6">
-              <div className="bg-blue-100  lg:p-3 p-0 rounded-lg inline-block mb-4">
-                <Droplet className="w-8 h-8 text-[#334C7B]" />
-              </div>
-              <CardHeader>
-                <CardTitle>Nursing Care</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Nursing care and observation room for patient monitoring.
-                </CardDescription>
-              </CardContent>
-            </div>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="bg-white rounded-lg shadow-lg"
-          >
-            <div className="p-6">
-              <div className="bg-blue-100 lg:p-3 p-0 rounded-lg inline-block mb-4">
-                <Battery className="w-8 h-8 text-[#334C7B]" />
-              </div>
-              <CardHeader>
-                <CardTitle>Power Backup</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  A modern and clean energy power backup that uses batteries.
-                </CardDescription>
-              </CardContent>
-            </div>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="bg-white rounded-lg shadow-lg col-span-2"
-          >
-            <div className="p-6">
-              <div className="bg-blue-100 lg:p-3 p-0 rounded-lg inline-block mb-4">
-                <LightbulbIcon className="w-8 h-8 text-[#334C7B]" />
-              </div>
-              <CardHeader>
-                <CardTitle>Digital Patient Management</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  A digital patient management system for efficient and seamless care.
-                </CardDescription>
-              </CardContent>
-            </div>
-          </motion.div>
+            </motion.button>
+          ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {activeIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] bg-black/90 flex items-center justify-center p-4"
+            onClick={close}
+          >
+            <button
+              onClick={close}
+              aria-label="Close"
+              className="absolute top-5 right-5 text-white/80 hover:text-white"
+            >
+              <X size={28} />
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                showPrev();
+              }}
+              aria-label="Previous image"
+              className="absolute left-3 md:left-8 text-white/70 hover:text-white"
+            >
+              <ChevronLeft size={36} />
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                showNext();
+              }}
+              aria-label="Next image"
+              className="absolute right-3 md:right-8 text-white/70 hover:text-white"
+            >
+              <ChevronRight size={36} />
+            </button>
+
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-3xl"
+            >
+              <div className="relative w-full h-[60vh] rounded-xl overflow-hidden">
+                <Image
+                  src={facilityImages[activeIndex].src}
+                  alt={facilityImages[activeIndex].title}
+                  fill
+                  sizes="100vw"
+                  className="object-contain"
+                />
+              </div>
+              <div className="text-center mt-4">
+                <h3 className="text-white font-heading text-lg font-bold">
+                  {facilityImages[activeIndex].title}
+                </h3>
+                <p className="text-white/70 text-sm mt-1">{facilityImages[activeIndex].caption}</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

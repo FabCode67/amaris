@@ -1,77 +1,82 @@
-import React from 'react';
-import Link from 'next/link';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import Link from "next/link";
+import Image from "next/image";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { FaFacebookF, FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import {
+  contactInfo,
+  workingHours,
+  navLinks,
+  services,
+  insurancePartners,
+  socialLinks,
+} from "@/lib/site-data";
 
 const Footer = () => {
-  const quickLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
-    { name: 'Team', href: '#team' },
-    { name: 'Facilities', href: '#facilities' },
-    { name: 'Partners', href: '#partners' },
-    { name: 'Login', href: 'https://xanahealth.online/login' },
-  ];
-
-  const workingHours = [
-    { day: 'Monday - Friday', hours: '8:00 AM - 8:00 PM' },
-    { day: 'Saturday', hours: '8:00 AM - 9:00 PM' },
-    { day: 'Sunday', hours: '8:00 AM - 9:00 PM' },
-  ];
-
-  const coreValues = [
-    "Compassion: We prioritize our patients' needs and offer empathetic care.",
-    'Integrity: We uphold the highest ethical standards in all our interactions.',
-    'Innovation: We adopt the latest medical technologies and treatments.',
-    'Excellence: We strive for superior outcomes in patient care and service delivery.',
-    'Community: We are committed to improving the health of the communities we serve.',
-  ];
+  const footerServices = services.slice(0, 6);
 
   return (
-    <footer className=" bg-[#334C7B] text-gray-100">
-      <div className="container px-4 md:px-8 md:max-w-7xl mx-auto py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Vision & Mission */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold mb-4">About Us</h3>
-            <div className="space-y-4">
-              <div>
-                <h4 className="font-semibold mb-2">Vision</h4>
-                <p className="text-gray-300 text-sm">
-                  To be the leading healthcare facility in Kigali, recognized for excellence in patient care, innovation, and compassionate service.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold mb-2">Mission</h4>
-                <p className="text-gray-300 text-sm">
-                  Our mission is to provide affordable, accessible, and quality healthcare services to all, ensuring a patient-first approach that fosters trust and enhances well-being.
-                </p>
-              </div>
+    <footer className="bg-medBlue text-gray-100">
+      <div className="container px-4 md:px-8 md:max-w-7xl mx-auto py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+          <div className="space-y-4 lg:col-span-2">
+            <Image
+              src="/amaris_logo1.JPG"
+              alt="Amaris Medical Clinic"
+              width={140}
+              height={52}
+              className="h-11 w-auto object-contain bg-white rounded-md p-1"
+            />
+            <p className="text-gray-300 text-sm leading-relaxed max-w-sm">
+              A patient-centered clinic in Nyamirambo, Kigali, providing
+              general medicine, dental care and maternal health services with
+              direct insurance billing and a genuinely caring team.
+            </p>
+            <div className="flex space-x-4 pt-2">
+              <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-gray-300 hover:text-white">
+                <FaTwitter size={18} />
+              </a>
+              <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-300 hover:text-white">
+                <FaLinkedin size={18} />
+              </a>
+              <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-gray-300 hover:text-white">
+                <FaFacebookF size={18} />
+              </a>
+              <a href={socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-gray-300 hover:text-white">
+                <FaWhatsapp size={18} />
+              </a>
             </div>
           </div>
 
-          {/* Core Values */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Core Values</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
-              {coreValues.map((value, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>{value}</span>
+            <h3 className="text-base font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-gray-300 hover:text-white transition-colors text-sm">
+                    {link.name}
+                  </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  href={contactInfo.appointmentWhatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors text-sm"
+                >
+                  Book Appointment
+                </a>
+              </li>
             </ul>
           </div>
-          <div className=' lg:mx-auto m-0 lg:justify-center justify-start'>
-            <h3 className="text-xl font-semibold  mb-4">Quick Links</h3>
-            <ul className="space-y-2  mx-auto lg:justify-center md:justify-start">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    href={link.href}
-                    className="text-gray-300 hover:text-white transition-colors text-sm"
-                  >
-                    {link.name}
+
+          <div>
+            <h3 className="text-base font-semibold mb-4">Services</h3>
+            <ul className="space-y-2">
+              {footerServices.map((service) => (
+                <li key={service.title}>
+                  <Link href="#services" className="text-gray-300 hover:text-white transition-colors text-sm">
+                    {service.title}
                   </Link>
                 </li>
               ))}
@@ -79,34 +84,50 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold mb-4">Working Hours</h3>
-            <div className="space-y-3">
-              {workingHours.map((schedule) => (
-                <div key={schedule.day} className="text-sm">
-                  <p className="font-medium">{schedule.day}</p>
-                  <p className="text-gray-300">{schedule.hours}</p>
-                </div>
+            <h3 className="text-base font-semibold mb-4">Insurance Partners</h3>
+            <ul className="space-y-2">
+              {insurancePartners.map((partner) => (
+                <li key={partner.name} className="text-gray-300 text-sm">
+                  {partner.name}
+                </li>
               ))}
-              <div className="mt-6 space-y-2">
-                <div className="flex items-center text-sm">
-                  <Phone className="w-4 h-4 mr-2" />
-                  <span>+250-788-597-772</span>
-                </div>
-                <div className="flex items-center text-sm">
-                  <Mail className="w-4 h-4 mr-2" />
-                  <span>amarisclinic1@gmail.com</span>
-                </div>
-                <div className="flex items-center text-sm">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  <span>Kigali, Rwanda</span>
-                </div>
-              </div>
-            </div>
+            </ul>
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="text-center text-sm text-gray-400">
-            <p>© {new Date().getFullYear()} Amaris Medical Clinic. All rights reserved.</p>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 pt-10 border-t border-white/10">
+          <div className="flex items-start gap-3 text-sm">
+            <Phone className="w-4 h-4 mt-0.5 shrink-0" />
+            <div>
+              <a href={contactInfo.phoneHref} className="hover:text-white">{contactInfo.phone}</a>
+              <p className="text-gray-400 text-xs mt-0.5">Emergency line available every day</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3 text-sm">
+            <Mail className="w-4 h-4 mt-0.5 shrink-0" />
+            <a href={contactInfo.emailHref} className="hover:text-white">{contactInfo.email}</a>
+          </div>
+          <div className="flex items-start gap-3 text-sm">
+            <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
+            <span>{contactInfo.addressShort}</span>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-x-6 gap-y-1 mt-6 text-xs text-gray-400">
+          {workingHours.map((wh) => (
+            <span key={wh.day}>
+              <span className="font-medium text-gray-300">{wh.day}:</span> {wh.hours}
+            </span>
+          ))}
+        </div>
+
+        <div className="border-t border-white/10 mt-10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-gray-400 text-center sm:text-left">
+            © {new Date().getFullYear()} Amaris Medical Clinic. All rights reserved.
+          </p>
+          <div className="flex gap-6 text-sm text-gray-400">
+            <Link href="#" className="hover:text-white">Privacy Policy</Link>
+            <Link href="#" className="hover:text-white">Terms of Service</Link>
           </div>
         </div>
       </div>

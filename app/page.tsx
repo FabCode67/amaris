@@ -8,18 +8,26 @@ import ContactUsPage from '@/components/ContactUs';
 import Footer from '@/components/Footer';
 import FacilitiesPage from '@/components/Facilities';
 import Parteners from '@/components/Partners';
+import Testimonials from '@/components/Testimonials';
+import CTASection from '@/components/CTASection';
+import FAQ from '@/components/FAQ';
+import Insights from '@/components/Insights';
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="mt-16 flex flex-col bg-[#CCD2DE]">
+      <main id="main-content" className="flex flex-col bg-white">
         <HeroSection />
         <AboutUsSection />
-        <Parteners />
         <MedicalServices />
+        <Parteners />
         <TeamPage />
         <FacilitiesPage />
+        <Testimonials />
+        <CTASection />
+        <FAQ />
+        <Insights />
         <ContactUsPage />
         <Footer />
       </main>
