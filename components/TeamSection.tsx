@@ -1,12 +1,19 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Award, GraduationCap, Mail, Phone, Users } from "lucide-react";
+import { Award, Clock, GraduationCap, Mail, Phone, Users } from "lucide-react";
 import { BsWhatsapp } from "react-icons/bs";
 import SectionHeading from "@/components/ui/section-heading";
 import Reveal from "@/components/ui/reveal";
-import { teamMembers } from "@/lib/site-data";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { teamMembers, type TeamMember } from "@/lib/site-data";
 
 const teamHighlights = [
   {
@@ -27,6 +34,8 @@ const teamHighlights = [
 ];
 
 const TeamPage = () => {
+  const [selected, setSelected] = useState<TeamMember | null>(null);
+
   return (
     <section id="team" className="bg-gray-50 py-20 md:py-28">
       <div className="container mx-auto px-4 md:px-8 md:max-w-7xl">
@@ -83,9 +92,20 @@ const TeamPage = () => {
                     {member.name}
                   </h3>
                   <p className="text-accent text-xs md:text-sm font-semibold mt-1">{member.role}</p>
+                  {member.credentials && (
+                    <p className="text-gray-400 text-[11px] font-medium mt-0.5 tracking-wide uppercase">
+                      {member.credentials}
+                    </p>
+                  )}
                   <p className="text-gray-600 text-xs mt-2 leading-relaxed flex-1 line-clamp-3">
                     {member.bio}
                   </p>
+                  <button
+                    onClick={() => setSelected(member)}
+                    className="text-xs font-semibold text-medBlue hover:text-brand-700 mt-2 underline underline-offset-2"
+                  >
+                    View more
+                  </button>
                   <div className="flex items-center justify-center gap-2.5 pt-3 text-medBlue">
                     <a
                       href={member.phoneHref}
@@ -119,6 +139,74 @@ const TeamPage = () => {
           ))}
         </div>
       </div>
+
+      <Dialog open={!!selected} onOpenChange={(open) => !open && setSelected(null)}>
+        <DialogContent className="max-w-lg">
+          {selected && (
+            <>
+              <DialogHeader>
+                <div className="flex items-center gap-4">
+                  <div className="relative w-20 h-20 rounded-full overflow-hidden shrink-0 bg-gray-100">
+                    <Image
+                      src={selected.photo}
+                      alt={selected.name}
+                      fill
+                      sizes="80px"
+                      className="object-cover object-[center_12%]"
+                    />
+                  </div>
+                  <div className="text-left">
+                    <DialogTitle className="text-xl">{selected.name}</DialogTitle>
+                    <p className="text-accent font-semibold text-sm mt-0.5">{selected.role}</p>
+                    {selected.credentials && (
+                      <p className="text-gray-400 text-[11px] font-medium tracking-wide uppercase mt-0.5">
+                        {selected.credentials}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </DialogHeader>
+
+              <p className="text-gray-600 text-sm leading-relaxed">{selected.bio}</p>
+
+              {selected.hours && (
+                <div className="flex items-start gap-2 text-sm text-gray-700 bg-blue-50/60 rounded-lg p-3">
+                  <Clock className="w-4 h-4 mt-0.5 shrink-0 text-medBlue" />
+                  <span>{selected.hours}</span>
+                </div>
+              )}
+
+              <div className="flex items-center gap-3 pt-2 text-medBlue">
+                <a
+                  href={selected.phoneHref}
+                  aria-label={`Call ${selected.name}`}
+                  className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center hover:bg-blue-100 transition-colors"
+                >
+                  <Phone size={18} />
+                </a>
+                {selected.email && (
+                  <a
+                    href={`mailto:${selected.email}`}
+                    aria-label={`Email ${selected.name}`}
+                    className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center hover:bg-blue-100 transition-colors"
+                  >
+                    <Mail size={18} />
+                  </a>
+                )}
+                <a
+                  href={selected.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`WhatsApp ${selected.name}`}
+                  className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-600 hover:bg-green-100 transition-colors"
+                >
+                  <BsWhatsapp size={17} />
+                </a>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

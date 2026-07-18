@@ -186,12 +186,15 @@ export const insurancePartners: InsurancePartner[] = [
   { name: "Prime Insurance", logo: "/promelogo.jpg" },
   { name: "Radiant", logo: "/radiant.png" },
   { name: "Old Mutual", logo: "/old.png" },
+  { name: "Eden Care", logo: "/eden.png" },
 ];
 
 export interface TeamMember {
   name: string;
   role: string;
+  credentials?: string;
   bio: string;
+  hours?: string;
   email?: string;
   phone: string;
   phoneHref: string;
@@ -201,7 +204,7 @@ export interface TeamMember {
 
 export const teamMembers: TeamMember[] = [
   {
-    name: "Mugabarigira Jean de Dieu",
+    name: "MUGABARIGIRA Jean de Dieu",
     role: "Managing Director",
     bio: "Mugabarigira oversees the overall management and strategic direction of Amaris Medical Clinic, ensuring smooth operations across every department.",
     phone: "+250 788 398 483",
@@ -210,9 +213,11 @@ export const teamMembers: TeamMember[] = [
     photo: "/managing_director.jpeg",
   },
   {
-    name: "Dr. Raban DUSABIMAN",
+    name: "Dr. Raban DUSABIMANA",
     role: "Clinic Director",
-    bio: "Dr. Raban leads clinical operations at Amaris Medical Clinic, overseeing quality of care across general medicine and specialist services while guiding the clinic's medical team.",
+    credentials: "MD, MSc",
+    bio: "A medical doctor with professional experience in clinical activities, research and quality improvement. He earned his Medical Degree from the University of Rwanda in 2018, and a Master of Science in Diabetes from the University of South Wales (UK). He worked in different district hospitals in Rwanda from 2018 to 2021, and has contributed to several research projects with 7 online publications. He holds a specialist certificate in Introduction to Quality Improvement and Patient Safety from the International Society for Quality in Health Care (ISQua). He has experience in research, emergency management, and working in low-resource settings, and is a trainer for Basic Life Support (BLS) and Advanced Cardiac Life Support (ACLS).",
+    hours: "7:00 AM – 10:00 AM, Monday – Sunday",
     email: "dusabimanaraban@gmail.com",
     phone: "+250 782 033 055",
     phoneHref: "tel:+250782033055",
@@ -222,7 +227,8 @@ export const teamMembers: TeamMember[] = [
   {
     name: "INDATWA Jean de Dieu",
     role: "Administrative Assistant & Legal Officer",
-    bio: "Jean de Dieu manages administrative operations and legal compliance at Amaris Medical Clinic, ensuring smooth day-to-day running of the facility for patients and staff alike.",
+    credentials: "LL.M, LL.B, DLP, Certified Mediator, PD in Theology",
+    bio: "Jean de Dieu manages administrative operations and legal transactions at Amaris Medical Clinic, ensuring smooth day-to-day running of the facility for patients and staff alike.",
     email: "indatwa8@gmail.com",
     phone: "+250 788 318 764",
     phoneHref: "tel:+250788318764",
@@ -241,7 +247,7 @@ export interface Stat {
 export const stats: Stat[] = [
   { label: "Patients Served", value: 1000, suffix: "+", icon: Users },
   { label: "Years of Experience", value: 5, suffix: "+", icon: Award },
-  { label: "Insurance Partners", value: 6, icon: ShieldCheck },
+  { label: "Insurance Partners", value: 7, icon: ShieldCheck },
   { label: "Services Offered", value: 15, suffix: "+", icon: Sparkles },
 ];
 
@@ -284,7 +290,7 @@ export const whyChooseUs = [
     icon: ShieldCheck,
     title: "Trusted Insurance Network",
     description:
-      "Direct billing with RSSB, MMI, Britam, Radiant, Old Mutual and Prime Insurance.",
+      "Direct billing with RSSB, MMI, Britam, Radiant, Old Mutual, Eden Care and Prime Insurance.",
   },
   {
     icon: Users,
@@ -432,7 +438,7 @@ export const faqs: FAQItem[] = [
   {
     question: "What insurance providers does Amaris Medical Clinic accept?",
     answer:
-      "We work directly with RSSB, MMI, Britam, Prime Insurance, Radiant and Old Mutual, with direct billing available so you don't have to pay upfront in most cases.",
+      "We work directly with RSSB, MMI, Britam, Prime Insurance, Radiant, Old Mutual and Eden Care, with direct billing available so you don't have to pay upfront in most cases.",
   },
   {
     question: "What are your opening hours?",
